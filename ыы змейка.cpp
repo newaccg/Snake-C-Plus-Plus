@@ -127,16 +127,12 @@ Point GetAxis(Point& head)
 		{
 		case 'w':
 			return Point(head.x, head.y - 1);
-			break;
 		case 'a':
 			return Point(head.x - 1, head.y);
-			break;
 		case 's':
 			return Point(head.x, head.y + 1);
-			break;
 		case 'd':
 			return Point(head.x + 1, head.y);
-			break;
 		}
 		cout << "r u stupid??" << endl;
 		std::cin >> in;
