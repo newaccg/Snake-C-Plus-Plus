@@ -79,7 +79,12 @@ public:
 
 void ShowGrid()
 {
-	system("cls");
+	#ifdef _WIN32
+		system("cls");
+	#else
+		system("clear");
+	#endif
+	
 	for (int y = 0; y < Y_SIZE; y++)
 	{
 		for (int x = 0; x < X_SIZE; x++)
@@ -176,6 +181,7 @@ void DrawSnake(deque<Point>& points, Point& head)
 	}
 	GRID[head.x][head.y] = SNAKE_HEAD_SPRITE;
 }
+
 
 int main()
 {
