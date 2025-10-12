@@ -2,6 +2,7 @@
 #include <iostream>
 #include <queue>
 #include <random>
+#include <cstdlib>
 
 using std::cout;
 using std::endl;
@@ -79,7 +80,12 @@ public:
 
 void ShowGrid()
 {
+#ifdef _WIN32
 	system("cls");
+#else
+	system("clear");
+#endif
+
 	for (int y = 0; y < Y_SIZE; y++)
 	{
 		for (int x = 0; x < X_SIZE; x++)
@@ -127,16 +133,12 @@ Point GetAxis(Point& head)
 		{
 		case 'w':
 			return Point(head.x, head.y - 1);
-			break;
 		case 'a':
 			return Point(head.x - 1, head.y);
-			break;
 		case 's':
 			return Point(head.x, head.y + 1);
-			break;
 		case 'd':
 			return Point(head.x + 1, head.y);
-			break;
 		}
 		cout << "r u stupid??" << endl;
 		std::cin >> in;
